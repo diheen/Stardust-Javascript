@@ -1,3 +1,8 @@
+/**
+ * @param {Clock} clock keeps track of how much time has passed since last tick, for various things
+ * @param {object} particleHandler unknown
+ * 
+ */
 function Emitter(clock = null, particleHandler = null) {
     this.init(clock, particleHandler);
 }
@@ -19,6 +24,8 @@ Emitter.prototype = {
         this.fps = 60;
         // used with clock to keep track of how long since the last handling of particles
         this.currentTime = 0;
+
+        this.active
 
         this.actions = [];
         this.initializers = [];

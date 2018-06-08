@@ -23,19 +23,21 @@
         <button id="coolButton2" type="submit" value="Submit" onMouseDown="demo.pingDown(getElementById('coolButton2'))" onMouseUp="demo.pingUp(getElementById('coolButton2'))">Ping</button>
         <p>If you click the "Submit" button, particles spawn from the button dimensions, going in all directions, but being attracted to a specific position.</p>
         <p>Hold "Ping" down to see it's effect</p>
+        <div>Coin Icon: https://pngtree.com/freepng/cartoon-gold-coin-decoration-pattern_2957009.html</div>
+
     </div>
     
     <canvas id="canv" style="height: 300px; width: 300px;border:1px solid white;position:fixed;display:block;top:0px;pointer-events:none; background-blend-mode: lighten;" height="535" width="1920"/>
-    <script src="scripts/startdust/libs/sketch.js"></script>
-    <script src="scripts/startdust/clocks/Clock.js"></script>
-    <script src="scripts/startdust/clocks/ImpulseClock.js"></script>
-    <script src="scripts/startdust/emitters/Emitter.js"></script>
-    <script src="scripts/startdust/Startdust.js"></script>
+    <script src="scripts/stardust/libs/sketch.js"></script>
+    <script src="scripts/stardust/clocks/Clock.js"></script>
+    <script src="scripts/stardust/clocks/ImpulseClock.js"></script>
+    <script src="scripts/stardust/emitters/Emitter.js"></script>
+    <script src="scripts/stardust/Stardust.js"></script>
     <script>
     var img = new Image;
-    img.src = "https://clubpenguinislandhelp.files.wordpress.com/2017/04/cpi-coin.png?w=256";
+    img.src = "images/coin.png";
     var img2 = new Image;
-    img2.src = "./images/whiteRing.png";
+    img2.src = "images/whiteRing.png";
     
     // ----------------------------------------
     // Example
@@ -43,7 +45,7 @@
 
     var MAX_PARTICLES = 280;
     var COLOURS = [ '#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423' ];
-
+    console.log('hi');
     var particles = [];
     var pool = [];
     
