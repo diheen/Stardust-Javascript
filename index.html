@@ -28,7 +28,7 @@
 
     </div>
     
-    <canvas id="canv" style="height: 300px; width: 300px;border:1px solid white;position:fixed;display:block;top:0px;pointer-events:none; background-blend-mode: lighten;" height="535" width="1920"/>
+    <canvas id="canv" style="border:2px solid white;position:fixed;display:block;top:0px;pointer-events:none; " height="500" width="500"/><!--background-blend-mode: lighten;-->
     <script src="scripts/stardust/libs/sketch.js"></script>
     <script src="scripts/stardust/clocks/Clock.js"></script>
     <script src="scripts/stardust/clocks/ImpulseClock.js"></script>
@@ -149,12 +149,16 @@
     var demo = Sketch.create({
     
         //type: Sketch.DOM,
+		fullscreen: false,
         type: Sketch.CANVAS,
+		width: 800,
+		height: 800,
         //container: document.getElementById( 'container' ),
         container: myCanvas,
         //element: canvas,
         context: myCtx,
-        retina: 'auto'
+		retina: false
+        //retina: 'auto'
     });
 
     demo.setup = function()
