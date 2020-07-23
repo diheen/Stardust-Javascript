@@ -34,7 +34,9 @@
     <script src="scripts/stardust/clocks/ImpulseClock.js"></script>
     <script src="scripts/stardust/emitters/Emitter.js"></script>
     <script src="scripts/stardust/Stardust.js"></script>
+	
     <script>
+	(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='./scripts/stardust/libs/stats.min.js';document.head.appendChild(script);})()
     var img = new Image;
     img.src = "images/coin.png";
     var img2 = new Image;
