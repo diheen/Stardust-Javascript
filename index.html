@@ -19,6 +19,7 @@
         Last name:<br>
         <input type="text" name="lastname" value="Bar" onclick="demo.mousedown()">
         <br><br>
+		<input id="quantity" type="text" name="quantity" value="30">
         <button id="coolButton" type="submit" value="Submit" onClick="demo.burst(getElementById('coolButton'))" style="width:100px;height:100px">Submit</button>
         <button id="coolButton2" type="submit" value="Submit" onMouseDown="demo.pingDown(getElementById('coolButton2'))" onMouseUp="demo.pingUp(getElementById('coolButton2'))" style="width:100px;height:100px">Ping</button>        <p>If you click the "Submit" button, particles spawn from the button dimensions, going in all directions, but being attracted to a specific position.</p>
         <p>Hold "Ping" down to see it's effect</p>
@@ -79,7 +80,7 @@
         
         var particleAmount, j;
 
-        particleAmount = 30;//random( 10, 40 );
+        particleAmount = document.getElementById("quantity").value;//random( 10, 40 );
         for ( j = 0; j < particleAmount; j++ )
         {
             var nx = x + random(-emitter.particleSpawnVariationX, emitter.particleSpawnVariationX);
@@ -151,7 +152,7 @@
         container: myCanvas,
         //element: canvas,
         context: myCtx,
-        retina: 'auto'
+        retina: false
     });
     
     document.getElementById('sizeInfo').innerHTML = "Size: "+demo.width+" x "+demo.height;
