@@ -24,7 +24,7 @@
         <p>If you click the "Submit" button, particles spawn from the button dimensions, going in all directions, but being attracted to a specific position.</p>
         <p>Hold "Ping" down to see it's effect</p>
         <div>Coin Icon: https://pngtree.com/freepng/cartoon-gold-coin-decoration-pattern_2957009.html</div>
-		
+		<div id="sizeInfo"></div>
 
     </div>
     
@@ -153,7 +153,9 @@
         context: myCtx,
         retina: 'auto'
     });
-
+    
+    document.getElementById('sizeInfo').innerHTML = "Size: "+demo.width+" x "+demo.height;
+    
     demo.setup = function()
     {
         //StardustRenderer.init(10, 5000);//memory in exchange for prebuffering
