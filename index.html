@@ -19,9 +19,8 @@
         Last name:<br>
         <input type="text" name="lastname" value="Bar" onclick="demo.mousedown()">
         <br><br>
-        <button id="coolButton" type="submit" value="Submit" onClick="demo.burst(getElementById('coolButton'))">Submit</button>
-        <button id="coolButton2" type="submit" value="Submit" onMouseDown="demo.pingDown(getElementById('coolButton2'))" onMouseUp="demo.pingUp(getElementById('coolButton2'))">Ping</button>
-        <p>If you click the "Submit" button, particles spawn from the button dimensions, going in all directions, but being attracted to a specific position.</p>
+        <button id="coolButton" type="submit" value="Submit" onClick="demo.burst(getElementById('coolButton'))" style="width:100px;height:100px">Submit</button>
+        <button id="coolButton2" type="submit" value="Submit" onMouseDown="demo.pingDown(getElementById('coolButton2'))" onMouseUp="demo.pingUp(getElementById('coolButton2'))" style="width:100px;height:100px">Ping</button>        <p>If you click the "Submit" button, particles spawn from the button dimensions, going in all directions, but being attracted to a specific position.</p>
         <p>Hold "Ping" down to see it's effect</p>
         <div>Coin Icon: https://pngtree.com/freepng/cartoon-gold-coin-decoration-pattern_2957009.html</div>
 		<div id="sizeInfo"></div>
@@ -147,6 +146,7 @@
     
         //type: Sketch.DOM,
         type: Sketch.CANVAS,
+		fullscreen: true,
         //container: document.getElementById( 'container' ),
         container: myCanvas,
         //element: canvas,
