@@ -25,7 +25,7 @@
         <p>If you click the "Submit" button, particles spawn from the button dimensions, going in all directions, but being attracted to a specific position.</p>
         <p>Hold "Ping" down to see it's effect</p>
         <div>Coin Icon: https://pngtree.com/freepng/cartoon-gold-coin-decoration-pattern_2957009.html</div>
-
+		<div id="sizeInfo"></div>
     </div>
     
     <canvas id="canv" style="border:2px solid white;position:fixed;display:block;top:0px;pointer-events:none; " height="500" width="500"/><!--background-blend-mode: lighten;-->
@@ -147,10 +147,10 @@
     }
 
     var demo = Sketch.create({
-		fullscreen: false,
         type: Sketch.CANVAS,
-		width: screen.width,
-		height: screen.height,
+		//fullscreen: false,
+		//width: screen.width,
+		//height: screen.height,
 		autoclear: true,
         //container: document.getElementById( 'container' ),
         container: myCanvas,
@@ -159,6 +159,11 @@
 		retina: false
         //retina: 'auto'
     });
+	
+	console.log("Size of Sketch canvas");
+	console.log(demo.width);
+	console.log(demo.height);
+	document.getElementById('sizeInfo').innerHTML = "Size: "+demo.width+" x "+demo.height;
 
     demo.setup = function()
     {
