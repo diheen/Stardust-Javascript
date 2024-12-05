@@ -29,3 +29,18 @@ https://github.com/matyasf/stardust-sim-loader
 (This helps load the editor build SDE files so designers can tweak particles without the need for a programmer to code them)
 
 ***
+
+
+
+One way to install currently, is to download and install the 'stardust air app': 
+https://github.com/matyasf/stardust-air/blob/master/Stardust-Desktop.air
+
+It will try to load the editor .swf from a server that no longer hosts it, so instead, get a swf from here: 
+https://github.com/matyasf/stardust-editor/tags
+
+And move it into: 
+%userprofile%\AppData\Roaming\com.matyasf.stardustAIR\Local Store
+
+Be sure it's named: "stardust_editor.swf"
+
+When you launch the air.app it will take a few seconds to look for the file on the server before eventually loading it locally. The screen is gray the whole time. If it takes over 5 seconds, something may be wrong.
