@@ -3,14 +3,60 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>sketch.js » Basic Example</title>
     <style type="text/css">
-        html, body {
-            background: #222;
+        html{
+            height: 100vh;
+            width: 100vh;
+        }
+
+        body {
+            background: #e6e6e6;
             margin: 0px;
             padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+
         }
+
+        .form {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            font-family: Helvetica, Arial, sans-serif;
+            color: #101527;
+            background-color: #83acbd;
+            width: 600px;
+            height: 600px;
+            border-radius: 5%;
+            justify-content: center;
+            align-content: center;
+            padding: 5%;
+        }
+
+        .buttons {
+            display: flex;
+            padding-top: 20px;
+            justify-content: space-evenly;
+        }
+
+        button {
+            font-size: 16px;
+            background-color: #233652;
+            color: #e6e6e6;
+            border: 1px solid #83acbd;
+            border-radius: 15%;
+            padding: 20px;
+        }
+
     </style>
-</head><body>
-	<div style="width:400px; background-color:white;padding:20px;border:1px dashed blue;">
+</head>
+
+<body>
+	<div class="form">
 		<h2>HTML Forms</h2>
 
         First name:<br>
@@ -20,9 +66,15 @@
         <input type="text" name="lastname" value="Bar" onclick="demo.mousedown()">
         <br><br>
 		<input id="quantity" type="text" name="quantity" value="30">
-        <button id="coolButton" type="submit" value="Submit" onClick="demo.burst(getElementById('coolButton'))" style="width:100px;height:100px">Submit</button>
-        <button id="coolButton2" type="submit" value="Submit" onMouseDown="demo.pingDown(getElementById('coolButton2'))" onMouseUp="demo.pingUp(getElementById('coolButton2'))" style="width:100px;height:100px">Ping</button>        <p>If you click the "Submit" button, particles spawn from the button dimensions, going in all directions, but being attracted to a specific position.</p>
-        <p>Hold "Ping" down to see it's effect</p>
+        <label>Upload a image file without backgroud to change the effect</label><input id="upload" type="file">
+        <div class="buttons">
+            <button id="coolButton" type="submit" value="Submit" onClick="demo.burst(getElementById('coolButton'))">Submit</button>
+            <button id="coolButton2" type="submit" value="Submit" onMouseDown="demo.pingDown(getElementById('coolButton2'))" onMouseUp="demo.pingUp(getElementById('coolButton2'))">Ping</button>       
+        </div>
+        <div class="info">
+            <p>Hold "Ping" down to see it's effect</p>
+            <p>If you click the "Submit" button, particles spawn from the button dimensions, going in all directions, but being attracted to a specific position.</p>
+        </div>
         <div>Coin Icon: https://pngtree.com/freepng/cartoon-gold-coin-decoration-pattern_2957009.html</div>
 		<div id="sizeInfo"></div>
 
@@ -35,10 +87,31 @@
     <script src="scripts/stardust/emitters/Emitter.js"></script>
     <script src="scripts/stardust/Stardust.js"></script>
     <script>
+
+    const upload = document.getElementById('upload');
+    
+
     var img = new Image;
+
     img.src = "images/coin.png";
+
+    
+    upload.addEventListener('change', function(){
+        const file = this.files[0];
+        if (file){
+            const reader = new FileReader();
+            reader.onload = function(){
+                img.src = reader.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    
+
     var img2 = new Image;
     img2.src = "images/whiteRing.png";
+
     
     // ----------------------------------------
     // Example
@@ -205,8 +278,12 @@
     
     demo.burst = function (dom){
         console.log('on');
+        console.log(img.src);
+
+            
         var particleAmount, j, x, y;
         var rect = dom.getBoundingClientRect();
+        
         x = (rect.right - rect.left)/2 + rect.left;
         y = (rect.bottom - rect.top)/2 + rect.top;
         
